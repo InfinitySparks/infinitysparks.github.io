@@ -17,11 +17,34 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
-// Quando il DOM è caricato, aggiungi l'observer a tutte le hero section
+// Quando il DOM è caricato, aggiungi l'observer a tutte le hero section e team section
 document.addEventListener('DOMContentLoaded', () => {
-    const heroSections = document.querySelectorAll('.hero-section, footer');
-    heroSections.forEach(section => {
+    const sections = document.querySelectorAll('.hero-section, .team-section, footer');
+    sections.forEach(section => {
         section.classList.add('hidden');
         observer.observe(section);
     });
+});
+
+function updateActiveNavLink() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const currentHash = window.location.hash || '#home';
+
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentHash) {
+            link.classList.add('active');
+            link.style.textTransform = 'uppercase';
+        } else {
+            link.classList.remove('active');
+            link.style.textTransform = 'none';
+        }
+    });
+}
+
+// Aggiorna il link attivo quando cambia l'hash dell'URL
+window.addEventListener('hashchange', updateActiveNavLink);
+
+// Aggiorna il link attivo al caricamento della pagina
+document.addEventListener('DOMContentLoaded', () => {
+    updateActiveNavLink();
 });

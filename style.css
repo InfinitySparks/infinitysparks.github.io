@@ -39,6 +39,11 @@ body {
     color: #000000;
 }
 
+.nav-links a.active {
+    background-color: #FFDE59;
+    font-weight: bold;
+}
+
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -138,12 +143,15 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     pointer-events: none;
     z-index: -1;
     background: #000000;
+    margin: 0;
+    padding: 0;
 }
+
 .star {
     position: absolute;
     width: 2px;
@@ -151,7 +159,10 @@ body {
     background: white;
     border-radius: 50%;
     animation: twinkle 1s infinite;
+    margin: 0;
+    padding: 0;
 }
+
 @keyframes twinkle {
     0% { opacity: 0; }
     50% { opacity: 1; }
@@ -188,4 +199,122 @@ footer.hidden {
 footer.show {
     opacity: 1;
     transform: translateY(0);
+}
+
+.team-title {
+    text-align: center;
+    color: #DFBD36;
+    margin: 40px 0;
+    font-size: 3rem;
+}
+
+.team-section {
+    margin: 40px 20px;
+    padding: 20px;
+    background-color: #000000;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 1s ease;
+}
+
+.team-section.hidden {
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.team-section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.team-section h2 {
+    color: #DFBD36;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.members-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.member-card {
+    background-color: #DFBD36;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.member-photo {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 15px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-card h3 {
+    margin: 10px 0;
+    color: #000000;
+}
+
+.member-card p {
+    color: #000000;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .members-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .member-card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+.members-grid-2 {
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.members-grid-4 {
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.members-grid-7 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 0 20px;
+}
+
+.members-grid-7 .member-card {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 280px;
+}
+
+@media (max-width: 768px) {
+    .members-grid-2,
+    .members-grid-4,
+    .members-grid-7 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 }
