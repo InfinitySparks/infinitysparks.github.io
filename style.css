@@ -330,3 +330,61 @@ footer.show {
     height: 400px !important;
     object-fit: contain !important;
 }
+
+.missions-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.mission-card {
+    background-color: #DFBD36;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.mission-photo {
+    width: 200px;
+    height: 200px;
+    margin: 15px auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.mission-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mission-card h3 {
+    color: #000000;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.mission-card p {
+    color: #000000;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+@media (max-width: 1024px) {
+    .missions-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .missions-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .mission-card {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
