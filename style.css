@@ -318,3 +318,15 @@ footer.show {
         gap: 20px;
     }
 }
+
+.smaller-image {
+    width: 300px !important;
+    height: 300px !important;
+    object-fit: contain !important;
+}
+
+.medium-image {
+    width: 400px !important;
+    height: 400px !important;
+    object-fit: contain !important;
+}

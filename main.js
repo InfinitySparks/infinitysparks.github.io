@@ -43,8 +43,3 @@ function updateActiveNavLink() {
 
 // Aggiorna il link attivo quando cambia l'hash dell'URL
 window.addEventListener('hashchange', updateActiveNavLink);
-
-// Aggiorna il link attivo al caricamento della pagina
-document.addEventListener('DOMContentLoaded', () => {
-    updateActiveNavLink();
-});
